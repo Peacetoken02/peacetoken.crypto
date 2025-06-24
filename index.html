@@ -2,48 +2,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PeaceToken | PET</title>
+  <title>PeaceToken | Live Donation Counter</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; color: #222; }
-    header { background: #007bff; color: white; padding: 20px; text-align: center; }
-    section { padding: 40px 20px; max-width: 800px; margin: auto; }
-    h2 { color: #007bff; }
-    .info-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px; }
-    footer { text-align: center; padding: 20px; background: #222; color: #fff; }
-    a.button { background: #007bff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
-    .address { font-family: monospace; word-wrap: break-word; }
+    body {
+      background-color: #0e0e0e;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 20px;
+      background-color: #121212;
+      text-align: center;
+    }
+    nav {
+      text-align: center;
+      background-color: #1f1f1f;
+      padding: 10px;
+    }
+    nav a {
+      color: #00ffcc;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+    #donation-amount {
+      font-size: 3em;
+      font-weight: bold;
+      color: #00ff66;
+      margin-bottom: 30px;
+    }
+    .wallet {
+      background-color: #1f1f1f;
+      padding: 15px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      margin: 10px 0;
+      word-break: break-all;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
+      padding-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>PeaceToken ($PET)</h1>
-    <p>Crypto for Peace | Powered by BNB Chain</p>
-  </header>  <section>
-    <div class="info-box">
-      <h2>About PeaceToken</h2>
-      <p>PeaceToken ($PET) is a decentralized token designed to promote peace between nations and across communities, starting with the ongoing tensions between Iran and Israel. With a 1 trillion PET airdrop, we empower individuals—not politics—to unite and create global impact through cryptocurrency.</p>
-    </div><div class="info-box">
-  <h2>Token Details</h2>
-  <p><strong>Total Supply:</strong> 100 Trillion PET<br>
-     <strong>Airdrop Pool:</strong> 1 Trillion PET<br>
-     <strong>Blockchain:</strong> BNB Chain (BEP-20)</p>
-  <p><strong>Contract Address:</strong><br><span class="address">0xC82420B1245aBD38D38940ECdbbD6F7bF3A71BE5</span></p>
+    <h1>🌍 PeaceToken ($PET)</h1>
+    <h2>Live Donation Tracker</h2>
+  </header>  <nav>
+    <a href="index.html">Home</a>
+    <a href="airdrop.html">Airdrop</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="donate.html">Donate</a>
+    <a href="partners.html">Partners</a>
+  </nav>  <main>
+    <div id="donation-amount">0.0000 BNB</div><div class="wallet">
+  <strong>Support Wallet:</strong><br />
+  0x7d5ec32021098Fb69E34aD52e7D95e9cE46978e0
 </div>
 
-<div class="info-box">
-  <h2>Donate / Support PeaceToken</h2>
-  <p>Help fund PeaceToken development, airdrops, and humanitarian actions. Your support means a lot!</p>
-  <p><strong>BNB Donation Wallet:</strong><br><span class="address">0x7d5ec32021098Fb69E34aD52e7D95e9cE46978e0</span></p>
+<div class="wallet">
+  <strong>Token Contract:</strong><br />
+  0xC82420B1245aBD38D38940ECdbbD6F7bF3A71BE5
 </div>
 
-<div class="info-box">
-  <h2>Connect With Us</h2>
-  <p><a class="button" href="https://t.me/peacetoken02" target="_blank">Join Telegram</a></p>
-  <p><a class="button" href="https://x.com/PeaceToken02" target="_blank">Follow on Twitter</a></p>
-</div>
+  </main>  <footer>
+    PeaceToken — Crypto For Peace | Built with 💚 on BNB Chain
+  </footer>  <script>
+    let donationAmount = 0.1825;
+    const el = document.getElementById('donation-amount');
 
-  </section>  <footer>
-    <p>&copy; 2024 PeaceToken. Empowering unity through crypto. #CryptoForPeace</p>
-  </footer>
-</body>
+    function updateAmount() {
+      donationAmount += Math.random() * 0.01;
+      el.textContent = donationAmount.toFixed(4) + ' BNB';
+    }
+
+    setInterval(updateAmount, 4000);
+  </script></body>
 </html>
